@@ -1,23 +1,3 @@
-![MIKES DATA WORK GIT REPO](https://raw.githubusercontent.com/mikesdatawork/images/master/git_mikes_data_work_banner_01.png "Mikes Data Work")        
-
-# Use SQL To Get Mirror Operating Modes Alerts When They Become High Safety Synchronous
-**Post Date: October 7, 2015**        
-
-
-
-## Contents    
-- [About Process](##About-Process)  
-- [SQL Logic](#SQL-Logic)  
-- [Author](#Author)  
-- [License](#License)       
-
-## About-Process
-
-<p>Here's some SQL Logic that you can throw into a nightly Job. Here's what it does: Checks to see if SQL Database Mail has been configured. If not; it will automatically configure your SQL Database Mail using generic email profile called 'SQL Database Mail'. Then it sends you an email notification when the SQL Database Mail has been configured using the name of the Database Server, and SQL Instance so you know where the email originated. All you need to do is replace the SMTP Server name with your server. Then it checks to see if you have any databases that have it's safety mode set to FULL ( ex. SET SAFETY FULL )</p>      
-
-
-## SQL-Logic
-```SQL
 use msdb;
 set nocount on
 set ansi_nulls on
@@ -280,20 +260,3 @@ set @body_top = @body_top + @xml_top +
             end
  
 drop table #mirror_operating_modes
-```
-
-
-[![WorksEveryTime](https://forthebadge.com/images/badges/60-percent-of-the-time-works-every-time.svg)](https://shitday.de/)
-
-## Author
-
-[![Gist](https://img.shields.io/badge/Gist-MikesDataWork-<COLOR>.svg)](https://gist.github.com/mikesdatawork)
-[![Twitter](https://img.shields.io/badge/Twitter-MikesDataWork-<COLOR>.svg)](https://twitter.com/mikesdatawork)
-[![Wordpress](https://img.shields.io/badge/Wordpress-MikesDataWork-<COLOR>.svg)](https://mikesdatawork.wordpress.com/)
-
-   
-## License
-[![LicenseCCSA](https://img.shields.io/badge/License-CreativeCommonsSA-<COLOR>.svg)](https://creativecommons.org/share-your-work/licensing-types-examples/)
-
-![Mikes Data Work](https://raw.githubusercontent.com/mikesdatawork/images/master/git_mikes_data_work_banner_02.png "Mikes Data Work")
-
